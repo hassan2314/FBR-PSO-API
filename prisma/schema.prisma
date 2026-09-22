@@ -25,11 +25,12 @@ model Tenant {
 }
 
 model Branch {
-  id       String @id @default(cuid())
-  name     String
-  tenantId String
-  tenant   Tenant @relation(fields: [tenantId], references: [id])
-  users    User[]
+  id         String      @id @default(cuid())
+  name       String
+  tenantId   String
+  tenant     Tenant      @relation(fields: [tenantId], references: [id])
+  users      User[]
+  stockItems StockItem[]
 }
 
 model User {
